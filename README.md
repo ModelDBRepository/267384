@@ -30,3 +30,6 @@ There are a few steps for porting NEURON models to NeuroGPU:
 
 
 Please reach out to zladd@berkeley.edu or rbenshalom@ucdavis.edu if you encounter any issues. Or you can open an issue in https://github.com/roybens/NeuroGPU.
+
+## Changelog
+2022-12: MOD-C-2-CPP: Compatibility fixed for NEURON 9.0, 8.2 and 8.1

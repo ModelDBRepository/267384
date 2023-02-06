@@ -5,12 +5,13 @@ ENDCOMMENT
 NEURON { SUFFIX nothing }
 
 VERBATIM
-
+#ifndef NRN_VERSION_GTEQ_8_2_0
+#define NrnThread _NrnThread
+#endif
 ENDVERBATIM
 PROCEDURE init_files(){
 	VERBATIM {
-		
-		
+	
 	}
 	ENDVERBATIM
 }
@@ -22,7 +23,7 @@ PROCEDURE init_files(){
 FUNCTION GetA(x) {
 VERBATIM {
 #if defined(t)
-	_NrnThread* _nt = nrn_threads;
+	NrnThread* _nt = nrn_threads;
 #endif
 Section* sec;
 	Node* nd;
@@ -43,7 +44,7 @@ ENDVERBATIM
 FUNCTION GetB(x) {
 VERBATIM {
 #if defined(t)
-	_NrnThread* _nt = nrn_threads;
+	NrnThread* _nt = nrn_threads;
 #endif
 Section* sec;
 	Node* nd;
@@ -64,7 +65,7 @@ ENDVERBATIM
 FUNCTION SetA(x,a) {
 VERBATIM {
 #if defined(t)
-	_NrnThread* _nt = nrn_threads;
+	NrnThread* _nt = nrn_threads;
 #endif
 Section* sec;
 	Node* nd;
@@ -85,7 +86,7 @@ ENDVERBATIM
 FUNCTION SetB(x,b) {
 VERBATIM {
 #if defined(t)
-	_NrnThread* _nt = nrn_threads;
+	NrnThread* _nt = nrn_threads;
 #endif
 Section* sec;
 	Node* nd;
@@ -112,7 +113,7 @@ VERBATIM {
 	Node* nd;
 	int ii;
 #if defined(t)
-	_NrnThread* _nt = nrn_threads;
+	NrnThread* _nt = nrn_threads;
 #endif
 for(ii=0;ii<_nt->end;ii++){
 nd=_nt->_v_node[ii];
@@ -126,7 +127,7 @@ PROCEDURE MyAdb() {
 VERBATIM {
 	int ii;
 #if defined(t)
-	_NrnThread* _nt = nrn_threads;
+	NrnThread* _nt = nrn_threads;
 #endif
 for(ii=0;ii<_nt->end;ii++){
 
@@ -140,7 +141,7 @@ PROCEDURE PrintRHS_D() {
 VERBATIM {
 	int ii;
 #if defined(t)
-	_NrnThread* _nt = nrn_threads;
+	NrnThread* _nt = nrn_threads;
 #endif
 Node* nd;
 for(ii=0;ii<_nt->end;ii++){
@@ -155,7 +156,7 @@ PROCEDURE MyTopology() {
 VERBATIM {
 	int ii;
 #if defined(t)
-	_NrnThread* _nt = nrn_threads;
+	NrnThread* _nt = nrn_threads;
 #endif
 for(ii=0;ii<_nt->end;ii++){
 
@@ -170,7 +171,7 @@ VERBATIM {
 	FILE * pFile;
 	int ii;
 #if defined(t)
-	_NrnThread* _nt = nrn_threads;
+	NrnThread* _nt = nrn_threads;
 #endif
 pFile = fopen ("parent.txt","w");
 for(ii=0;ii<_nt->end;ii++){
@@ -187,7 +188,7 @@ VERBATIM {
 	FILE * pFile;
 	int ii;
 #if defined(t)
-	_NrnThread* _nt = nrn_threads;
+	NrnThread* _nt = nrn_threads;
 #endif
 pFile = fopen ("64TL.csv","w");
 for(ii=0;ii<_nt->end;ii++){
@@ -207,7 +208,7 @@ VERBATIM {
 	Node* nd;
 	int ii;
 #if defined(t)
-	_NrnThread* _nt = nrn_threads;
+	NrnThread* _nt = nrn_threads;
 #endif
 for(ii=0;ii<_nt->end;ii++){
 nd=_nt->_v_node[ii];
@@ -226,7 +227,7 @@ VERBATIM {
 	Node* nd;
 	int ii;
 #if defined(t)
-	_NrnThread* _nt = nrn_threads;
+	NrnThread* _nt = nrn_threads;
 #endif
 for(ii=0;ii<_nt->end;ii++){
 nd=_nt->_v_node[ii];
