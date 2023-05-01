@@ -33,3 +33,5 @@ Please reach out to zladd@berkeley.edu or rbenshalom@ucdavis.edu if you encounte
 
 ## Changelog
 2022-12: MOD-C-2-CPP: Compatibility fixed for NEURON 9.0, 8.2 and 8.1
+2023-04: Remove generated C files and hidden files. Update branching.mod for
+         compatibility with new data structures coming in NEURON 9.0.
